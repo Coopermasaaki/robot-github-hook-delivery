@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"errors"
 
 	"github.com/opensourceways/server-common-lib/utils"
@@ -10,10 +9,10 @@ import (
 )
 
 type configuration struct {
-	Kafka     kafka.Config    `json:"kafka"          required:"true"`
-	Topic     string          `json:"topic"          required:"true"`
-	Hmac      json.RawMessage `json:"hmac"           required:"true"`
-	UserAgent string          `json:"user_agent"     required:"true"`
+	Kafka     kafka.Config `json:"kafka"          required:"true"`
+	Topic     string       `json:"topic"          required:"true"`
+	Hmac      string       `json:"hmac"           required:"true"`
+	UserAgent string       `json:"user_agent"     required:"true"`
 }
 
 func (c *configuration) validate() error {

@@ -80,7 +80,7 @@ func main() {
 	d := delivery{
 		topic: cfg.Topic,
 		hmac: func() []byte {
-			return cfg.Hmac
+			return []byte(cfg.Hmac)
 		},
 	}
 
